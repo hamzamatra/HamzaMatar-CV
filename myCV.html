@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamza Matar | Cybersecurity & IT Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-page: #020c1b;
+            --bg-nav: #020617;
+            --card-bg: #0a192f;
+            --accent-cyan: #00d4ff;
+            --text-bright: #e6f1ff;
+            --text-dim: #8892b0;
+            --border-color: #112240;
+            --header-gradient: linear-gradient(135deg, #020617, #0b3b5f);
+        }
+        * { box-sizing: border-box; -webkit-touch-callout: none; }
+        html { font-size: 100%; }
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-dim);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.5;
+            user-select: none;
+        }
+        img { user-drag: none; pointer-events: none; }
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg-nav);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 12px 0;
+            text-align: center;
+        }
+        nav a {
+            color: var(--text-dim);
+            margin: 0 12px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--accent-cyan); }
+        header {
+            background: var(--header-gradient);
+            padding: 25px 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin: 0; }
+        header p { font-size: 0.95rem; margin: 5px 0; color: var(--text-bright); }
+        .company-name { font-weight: 600; color: var(--accent-cyan); }
+        .skills { font-size: 0.85rem; opacity: 0.8; }
+        section { max-width: 900px; margin: auto; padding: 30px 20px; }
+        .section-title {
+            color: var(--accent-cyan);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 8px 25px -12px rgba(2, 12, 27, 0.7);
+        }
+        .about-flex-container { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+        .about-text-content { flex: 1; min-width: 280px; }
+        .bio-p { color: var(--text-bright); font-size: 1rem; margin-bottom: 15px; }
+        strong { color: var(--accent-cyan); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+        .info-column h4 { color: var(--accent-cyan); text-transform: uppercase; font-size: 0.8rem; margin-bottom: 8px; letter-spacing: 1px; }
+        .info-column ul { list-style: none; padding: 0; margin: 0; }
+        .info-column li { margin-bottom: 6px; display: flex; align-items: center; gap: 5px; font-size: 0.9rem; }
+        .info-column li::before { content: "▹"; color: var(--accent-cyan); }
+        .skills-grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+        .skill-pill {
+            background: rgba(17, 34, 64, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-bright);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .skill-pill:hover { border-color: var(--accent-cyan); transform: translateY(-2px); background: var(--border-color); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+        .project-box {
+            background-color: #111827;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .project-box:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.5); background-color: #1f2937; color: var(--accent-cyan); }
+        .project-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .project-header i { color: var(--accent-cyan); font-size: 1.2rem; }
+        .project-tag { font-size: 0.7rem; color: var(--accent-cyan); background: rgba(0,212,255,0.1); padding: 3px 8px; border-radius: 4px; width: fit-content; }
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+        .cert-card {
+            background: rgba(17,34,64,0.4);
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-bright);
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        .cert-card:hover { transform: translateX(3px); background: #112240; border-color: var(--accent-cyan); }
+        .cert-info { display: flex; align-items: center; gap: 8px; color: #e6f1ff; }
+        .pdf-icon { font-size: 0.9rem; color: #00d4ff; }
+        .download-hint { font-size: 0.7rem; color: #8892b0; }
+        .contact-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 60px; height: 60px; border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 50%; text-decoration: none; font-size: 28px;
+            transition: all 0.3s ease; background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        .contact-btn:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        footer { padding: 25px; text-align: center; border-top: 1px solid var(--border-color); font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            .about-flex-container { flex-direction: column; text-align: center; }
+            header h1 { font-size: 1.5rem; }
+            section { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Hamza Matar</h1>
+        <p>Junior IT Technical Support & Security Admin</p>
+        <p class="company-name">Al-Behar Group</p>
+        <p class="skills">Security Operations • Networking • System Administration</p>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title"><i class="fas fa-user-shield"></i> About Me</h2>
+        <div class="glass-card about-flex-container">
+            <div class="about-text-content">
+                <p class="bio-p">
+                    I am a <strong>Cybersecurity Specialist</strong> with a Bachelor’s degree from <strong>Al-Isra University</strong>. I focus on <strong>data protection</strong> and implementing robust security infrastructures.
+                </p>
+                <div class="info-grid">
+                    <div class="info-column">
+                        <h4>Academic</h4>
+                        <ul>
+                            <li>Networking</li>
+                            <li>Operating Systems</li>
+                            <li>Programming</li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <h4>Expertise</h4>
+                        <ul>
+                            <li>Security SIEM</li>
+                            <li>Vulnerability Assessment</li>
+                            <li>Network Administration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+        <div class="glass-card">
+            <div class="skills-grid-layout">
+                <div class="skill-pill"><i class="fab fa-python" style="color:#306998;"></i> Python</div>
+                <div class="skill-pill"><i class="fas fa-code" style="color:#68217A;"></i> C#</div>
+                <div class="skill-pill"><i class="fab fa-linux" style="color:#F0A000;"></i> Kali Linux</div>
+                <div class="skill-pill"><i class="fab fa-windows" style="color:#0078D6;"></i> Windows Server</div>
+                <div class="skill-pill"><i class="fab fa-microsoft" style="color:#00A4EF;"></i> M365 Admin</div>
+                <div class="skill-pill"><i class="fas fa-terminal" style="color:#1E4DB7;"></i> PowerShell</div>
+                <div class="skill-pill"><i class="fas fa-shield-virus" style="color:#FF4136;"></i> IDS / IPS</div>
+                <div class="skill-pill"><i class="fas fa-search-plus" style="color:#2ECC40;"></i> Nmap</div>
+                <div class="skill-pill"><i class="fas fa-user-secret" style="color:#006400;"></i> Pen-Testing</div>
+                <div class="skill-pill"><i class="fas fa-network-wired" style="color:#0099CC;"></i> Packet Analysis</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><i class="fas fa-project-diagram"></i> Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-box">
+                <div class="project-header"><i class="fas fa-search-radar"></i><h4>Vulnerability Scanning</h4></div>
+                <p>Security assessments using <strong>Nessus</strong> and <strong>Nmap</strong> to identify network risks.</p>
+                <div class="project-tag">Nessus & Nmap</div>
+            </div>
+            <div class="project-box">
+                <div class="project-header"><i class="fas fa-fish"></i><h4>Phishing Simulation</h4></div>
+                <p>Launched awareness campaigns using <strong>Gophish</strong> to improve social engineering defense.</p>
+                <div class="project-tag">Social Engineering</div>
+            </div>
+            <div class="project-box">
+                <div class="project-header"><i class="fas fa-shield-alt"></i><h4>Security Testing</h4></div>
+                <p>Rigorous <strong>Firewall</strong> and network testing to ensure perimeter protection.</p>
+                <div class="project-tag">Network Defense</div>
+            </div>
+            <div class="project-box">
+                <div class="project-header"><i class="fas fa-file-invoice"></i><h4>Log Monitoring</h4></div>
+                <p>Real-time security log analysis to detect anomalies and potential threats.</p>
+                <div class="project-tag">SIEM Concepts</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications & Courses</h2>
+        <div class="glass-card">
+            <div class="certs-grid">
+                <a href="certs/Network_Technician_Career_Path.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> Network Technician Career Path – Cisco Networking Academy</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/CCNA.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> CCNA – Jordan University</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/CCT.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> CCT – Green Circle</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/Security+.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> Security+ – Pioneer Academy</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/Network_Defense.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> Network Defense – Cisco Networking Academy</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/MS365.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> Microsoft 365 Endpoint Administrator</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/eJPTv1.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> eJPTv1 – netriders.academy</div><i class="fas fa-download download-hint"></i></a>
+                <a href="certs/CEH.pdf" download class="cert-card"><div class="cert-info"><i class="fas fa-file-pdf pdf-icon"></i> CEH – The Hope International</div><i class="fas fa-download download-hint"></i></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
+    <h2 class="section-title"><i class="fas fa-paper-plane"></i> Contact Me</h2>
+    <div class="glass-card" style="display:flex; justify-content:center; gap:20px; flex-wrap: wrap;">
+        <!-- Gmail Button -->
+        <a href="#" id="gmail-btn" title="Send me an email" class="contact-btn">
+            <i class="fab fa-google" style="color:#D44638;"></i>
+        </a>
+
+        <!-- LinkedIn Button -->
+        <a href="https://www.linkedin.com/in/hamza-matar-48a60a20a"
+           target="_blank"
+           title="LinkedIn Profile"
+           class="contact-btn">
+            <i class="fab fa-linkedin-in" style="color:#0077B5;"></i>
+        </a>
+
+        <!-- Phone Button -->
+        <a href="tel:+962786058715" title="Call me" class="contact-btn">
+            <i class="fas fa-phone" style="color:#00ff99;"></i>
+        </a>
+    </div>
+</section>
+
+
+
+    <footer>© 2026 Hamza Matar | Cybersecurity Specialist</footer>
+
+    <script>
+        // حماية البريد الإلكتروني
+        document.getElementById("gmail-btn").addEventListener("click", function() {
+            const user = "hamzamatar4753";
+            const domain = "gmail.com";
+            const email = user + "@" + domain;
+            window.location.href = "mailto:" + email + "?subject=Contact From Your Website&body=Hello Hamza,";
+        });
+
+        // منع زر الفأرة الأيمن
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // منع اختصارات DevTools
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false; // F12
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) return false; // Ctrl+Shift+I/J/C
+            if(e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+        };
+    </script>
+</body>
+</html>
